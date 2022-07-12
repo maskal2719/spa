@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card">
+    <div class="card-title">
+      <h2>{{post.title}}</h2>
+      <img src="{{post.urlPict}}" width="200px">
+      <p>{{post.date | date:'MMMM dd, yyy, HH:mm:ss'}}</p>
+    </div>
+    <div class="card-body">
+      <p class="body-text">{{post.body.slice(0,500) + '...'}}</p>
+    </div>
+    <div class="card-link">
+      <a [routerLink] = "['/posts', post.id]">Read more</a>
+      <button mat-fab color="warn" (click)="removePost($event)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+

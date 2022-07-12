@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card {
+  padding: 15px;
+  border: #ccc 1px dotted;
+  margin: 9px 0;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+/*.form-control {*/
+/*  display: block;*/
+/*  color: #888;*/
+/*  margin-bottom: .8rem;*/
+
+/*&.invalid {*/
+/*   color: var(--primary-color);*/
+/*input {*/
+/*  border-color: var(--primary-color);*/
+/*}*/
+/*}*/
+
+/*.validation {*/
+/*  color: var(--primary-color);*/
+/*}*/
+/*}*/
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+input[type='submit'],
+button {
+  font: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

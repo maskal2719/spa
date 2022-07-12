@@ -1,0 +1,6 @@
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 10px;
+  justify-content: space-around;
+}

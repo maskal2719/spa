@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="posts" *ngIf="posts; else loading">
+    <input type="text" placeholder="Search post on title" [(ngModel)]="searchTitle">
+    <app-post *ngFor="let post of posts | searchPost: searchTitle"
+              [post]="post"
+              (onRemove)="removePost($event)"
+    >
+    </app-post>
+  </div>
+
+  <ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+</div>

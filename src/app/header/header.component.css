@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  background-color: darkred;
+}
+
+.navbar main {
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+ul {
+  display: flex;
+}
+
+a {
+  color: #fff;
+  padding: 10px;
+  margin: 0 6px;
+}
+a:hover {
+  color: grey;
+}

@@ -1,0 +1,72 @@
+<div class="container" >
+  <nav class="navbar main"  *ngIf="!isLogin; else login ">
+    <div>
+      <ul>
+        <li>
+          <a href=""></a>
+        </li>
+        <li>
+          <a routerLink="" >Home</a>
+        </li>
+        <li>
+          <a routerLink="/posts">Posts</a>
+        </li>
+        <li>
+          <a routerLink="/add-form">Create new post</a>
+        </li>
+        <li>
+          <a routerLink="/weather">Weather</a>
+        </li>
+        <li>
+          <a routerLink="/cdk">CDK tasks</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a routerLink="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<ng-template #login>
+  <nav class="navbar main">
+    <div>
+      <ul>
+        <li>
+          <a href=""></a>
+        </li>
+        <li>
+          <a routerLink="" >Home</a>
+        </li>
+        <li>
+          <a routerLink="/posts">Posts</a>
+        </li>
+        <li>
+          <a routerLink="/add-form">Create new post</a>
+        </li>
+        <li>
+          <a routerLink="/weather">Weather</a>
+        </li>
+        <li>
+          <a routerLink="/cdk">CDK tasks</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a>{{this.currentUser}}</a>
+        </li>
+        <li>
+          <button routerLink="/login" (click)="logOut()">Log out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</ng-template>
+
+

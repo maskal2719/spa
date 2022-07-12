@@ -1,0 +1,55 @@
+<div class="container" >
+  <button mat-fab color="primary" (click)="toggle =!toggle">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <div *ngIf="currentPost; else loading">
+  <div class="details-card" *ngIf="!toggle else edit" >
+    <div class="card-title">
+      <img src="{{currentPost.urlPict}}" width="300px">
+      <h2 class="details-card-title">{{currentPost.title | uppercase}}</h2>
+      <div>
+        <small>{{currentPost.date | date:'MMMM dd, yyy, HH:mm:ss'}}</small>
+      </div>
+    </div>
+    <p>{{currentPost.body}}</p>
+    <small>{{currentPost.author}}</small><br>
+  </div>
+  </div>
+
+  <ng-template #edit>
+    <div *ngIf="toggle" class="edit-card">
+      Edit title:
+      <mat-form-field appearance="fill">
+        <mat-label>Post title</mat-label>
+        <input matInput [(ngModel)]="currentPost.title">
+      </mat-form-field>
+      Edit body:
+      <mat-form-field appearance="fill">
+        <mat-label>Post body</mat-label>
+        <textarea matInput [(ngModel)]="currentPost.body"> </textarea>
+      </mat-form-field>
+      Edit author:
+      <mat-form-field appearance="fill">
+      <mat-label>Post author</mat-label>
+      <input matInput [(ngModel)]="currentPost.author">
+    </mat-form-field>
+      Edit author:
+      <mat-form-field appearance="fill">
+        <mat-label>Url post</mat-label>
+        <input matInput [(ngModel)]="currentPost.urlPict">
+      </mat-form-field>
+      Edit date:
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="currentPost.date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <button class="btn btn-primary" (click)="editPost()">Save</button>
+  </ng-template>
+  <ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+</div>

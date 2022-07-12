@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card-weather" *ngIf="weather; else loading">
+    <div class="input">
+      <input type="text"  placeholder="Введите город" #input>
+      <button class="btn" type="button" (click)="getWeatherData(input.value)">Search on city</button>
+    </div>
+    <div class="weather-title">
+      <h3>Погода в {{weather.city.name}}, {{weather.city.country}}</h3>
+      <p>На {{weather.list[0].dt * 1000 | date: 'dd.MM.YYYY'}}</p>
+    </div>
+    <div class="weather-info">
+      <img src="http://openweathermap.org/img/wn/{{weather.list[0].weather[0].icon}}@2x.png" width="50px" alt="icon">
+      <p>{{weather.list[0].weather[0].description | uppercase}}</p>
+      <span>Температура {{weather.list[0].main.temp}} &#8451;</span>
+      <span>Чувствуется как {{weather.list[0].main.feels_like}} &#8451;</span>
+      <p>Влажность {{weather.list[0].main.humidity}} %</p>
+      <p>Скорость ветра {{weather.list[0].wind.speed}} м/c</p>
+      <p>Восход солнца {{weather.city.sunrise * 1000 | date: 'HH:mm'}}</p>
+      <p>Заход солнца {{weather.city.sunset * 1000 | date: 'HH:mm'}}</p>
+    </div>
+  </div>
+  <ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+</div>

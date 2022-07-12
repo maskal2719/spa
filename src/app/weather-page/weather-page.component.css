@@ -1,0 +1,29 @@
+.card-weather{
+  max-width: 400px;
+  margin: 0 auto;
+}
+.input {
+  width: 100%;
+  display: flex;
+}
+
+.btn {
+  background: darkgreen;
+  color: antiquewhite;
+  padding: 5px 18px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+
+.weather-title {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
